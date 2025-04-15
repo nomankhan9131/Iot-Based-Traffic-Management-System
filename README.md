@@ -41,7 +41,8 @@ Spaces
 - Connect ultrasonic sensors to trigger and echo pins as defined in the code
 
 
-Step-by-Step Software Execution (Python Simulation)
+STEP BY STEP SOFTWARE EXECUTION
+
 1. Install Required Software
 Make sure you have Python installed on your machine. You can download Python from the official website.
 
