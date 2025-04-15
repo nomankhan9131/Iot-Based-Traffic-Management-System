@@ -23,9 +23,8 @@ How to run the project:
 - Resistors (220Ω for LEDs)
 - Breadboard and jumper wires
 - USB cable and 5V power supply
-
+Spaces
 ---
-
 ## 🛠️ Setup Instructions
 
 ### 1. Wiring
@@ -40,6 +39,35 @@ How to run the project:
   - **3.3V & GND** as required
 - Connect Servo signal wire to Pin 8
 - Connect ultrasonic sensors to trigger and echo pins as defined in the code
+
+
+Step-by-Step Software Execution (Python Simulation)
+1. Install Required Software
+Make sure you have Python installed on your machine. You can download Python from the official website.
+
+You’ll also need some libraries to simulate the traffic management system:
+
+RPi.GPIO (to simulate hardware GPIO pins, used for LEDs and sensor control)
+
+time (for delays and timing logic)
+
+threading (for handling concurrent tasks like sensor reading and traffic light management)
+2. Simulate the RFID Reader (Using Python)
+Since we cannot use an actual RFID reader in the software, we can simulate the reading process by prompting the user for input (simulating RFID tag scans).
+
+3. Simulate Ultrasonic Sensor for Traffic Light Control
+For the ultrasonic sensor, you can use a random number generator or simulate distance measurements to control the traffic light.
+
+Explanation of the Code
+Traffic Light Simulation: The TrafficLight class manages the traffic light state. It can switch between RED, YELLOW, and GREEN states. The run() method simulates the changing of lights every 5 seconds.
+
+RFID Reader Simulation: The RFIDReader class simulates RFID tag reading by asking the user to input a tag number. It checks if the entered tag matches a predefined list of tags.
+
+Ultrasonic Sensor Simulation: The UltrasonicSensor class simulates the measurement of distance by generating random values between 1 and 100 cm. If the distance is less than 10 cm, it triggers a change in the traffic light.
+
+Concurrency: The program runs the traffic light in a separate thread while continuously checking for RFID scans and object detection via the ultrasonic sensor. This mimics how the system would work in a real-world scenario.
+
+
 
 #### 🚦 Traffic Signal (`tlcheck.ino`)
 - Red LED → Digital Pin 2  
